@@ -1,6 +1,6 @@
 # Quec /ˈkyuːsi/
 
-A persistent, queryable Object cache built on top of Local Storage
+A persistent, queryable Object cache built on top of Local Storage.
 
 ## Collection
 
