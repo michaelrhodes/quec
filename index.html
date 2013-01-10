@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="maximum-scale=1,initial-scale=1,user-scalable=no" />
+	<title>Quec</title>
+	<style>
+		@font-face {
+			font-family: "Noticia Text";
+			src: url('fonts/NoticiaText-Regular.eot');
+			src: url('fonts/NoticiaText-Regular.eot?#iefix') format('embedded-opentype'),
+					 url('fonts/NoticiaText-Regular.woff') format('woff'),
+					 url('fonts/NoticiaText-Regular.ttf') format('truetype'),
+					 url('fonts/NoticiaText-Regular.svg#noticiatext') format('svg');
+			font-weight: normal;
+			font-style: normal
+		}
+		@font-face {
+			font-family: "DejaVu Sans Mono";
+			src: url('fonts/dejavusansmono.eot');
+			src: url('fonts/dejavusansmono.eot?#iefix') format('embedded-opentype'),
+					 url('fonts/dejavusansmono.woff') format('woff'),
+					 url('fonts/dejavusansmono.ttf') format('truetype'),
+					 url('fonts/dejavusansmono.svg#dejavusansmono') format('svg');
+			font-weight: normal;
+			font-style: normal
+		}
+		@font-face {
+			font-family: Entypo;
+			src: url('fonts/entypo.eot');
+			src: url('fonts/entypo.eot?#iefix') format('embedded-opentype'),
+					 url('fonts/entypo.woff') format('woff'),
+					 url('fonts/entypo.ttf') format('truetype'),
+					 url('fonts/entypo.svg#entypo') format('svg');
+			font-weight: normal;
+			font-style: normal
+		}
+		body { -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; background-color: #00627b; color: #fff; font: 14px/1.6em sans-serif, "Noticia Text"; margin: 0; min-width: 19em; padding: 0; text-rendering: optimizeLegibility }
+		.inner { margin: 0 auto; position: relative; width: 19.5em }
+			.header { background-color: #fbcd00; color: #00627b; padding: 4em 0 3em; position: relative }
+			.header .icon { bottom: -0.8em; color: #005267; font: 7em Entypo; position: absolute; right: -0.125em }
+			.header h1 { color: #fff; display: inline-block; font: bold 4em/1em sans-serif; left: -0.0875em; margin: 0; position: relative }
+			.header .pronounciation { color: #fff; font: bold 1.714em sans-serif }
+			.header p { font-size: 1.142em; line-height: 1.6em; margin: 0.5em 0 0; max-width: 15.5em }
+			.nav { background-color: #005267; margin: 0; position: relative; width: 100%; z-index: 1 }
+			.nav .inner { list-style: none; overflow: hidden; padding: 0.75em 0 }
+			.nav li { float: left; margin-right: 1em; overflow: hidden }
+			.nav a { color: #fff; display: inline-block; font: bold 1em/1.3em sans-serif; padding: 0.5em 1em; text-align: center; text-decoration: none }
+			.nav a { opacity: 0.625 }
+			.nav a:hover,
+			.nav a:focus { opacity: 1 }
+			.nav .collection a { padding-left: 0.75em; padding-right: 0.75em }
+			.nav .item a { padding-left: 1.425em; padding-right: 1.425em }
+			.nav a .icon { color: #65a9b5; display: block; font: normal 4em/0.75em Entypo }
+			.nav a:hover .icon,
+			.nav a:focus .icon { color: #95d9e5 }
+			.nav .current a:hover .icon,
+			.nav .current a:focus .icon { color: #65a9b5 }
+			h1 a { color: #fff; text-decoration: none }
+			h2, h3, h4,	h5,	h6 { font-family: sans-serif; margin: 0 }
+			h2 { font-size: 1.425em; padding: 1.75em 0 1em }
+			h3 { color: #75b9c5; font-size: 1.14em; padding: 0 0 0.57em }
+			h4 { font-size: 1.142em }
+			h5 { font-size: 1.125em }
+			h6 { font-size: 1em }
+			h3 + p { margin-top: 0 }
+			h4 + p,
+			h5 + p { margin-top: 0.5em }
+			h6 + p { margin-top: 0.25em }
+			h6 + code { margin-top: 0.5em }
+			.alert { background-color: #a5d9eA; border-radius: 0.42em; color: #00627b; font-family: sans-serif; margin: 2.5em 0 0.5em; padding: 0.75em 1.25em 0.75em 1em; text-align: center }
+		 	.alert:before { color: #00627b; content: "\1f4e3"; display: inline-block; font: normal 2.5em/1em Entypo; margin: -1.75em 0.2em -0.75em 0; position: relative; top: 0.1em } 
+			code { background-color: #005267; border-radius: 0.42em; display: block; font: 0.928em/1.5em "DejaVu Sans Mono", monospace; margin-bottom: 1.5em; padding: 0.916em 1.125em }
+			pre { font-family: inherit; margin: 0 }
+			@media only screen and (min-width: 480px) {
+				.inner { width: 31em }
+				.header { padding-top: 7em }
+				.header p { max-width: 16em }
+			}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="inner">
+			<h1><a href="/quec">Quec</a></h1>
+			<span class="pronounciation">/ˈkyuːsi/</span>
+			<p>A persistent, queryable Object cache built on top of Local Storage</p>
+			<span class="icon">&#128254;</span>
+		</div>
+	</div>
+	<div class="nav">
+		<ul class="inner">
+			<li class="collection">
+				<a href="#collection">
+					<span class="icon">&#59392;</span>
+					Collection
+				</a>
+			</li>
+			<li class="cache">
+				<a href="#cache">
+					<span class="icon">&#128193;</span>
+					Cache
+				</a>
+			</li>
+			<li class="item">
+				<a href="#item">
+					<span class="icon">&#59185;</span>
+					Item
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="content">
+	<div class="inner">
+		<p class="alert"><strong>Quec</strong> is available in your console for experimentation</p>
+	</div>
+	<div id="collection">
+		<div class="inner">
+			<h2>Collection</h2>
+			<h3>Creating a new collection</h3>
+			<code>var library = new Quec("library")</code>
+		</div>
+	</div>
+	<div id="cache">
+		<div class="inner">
+			<h2>Cache</h2>
+			<h3>Adding a cache</h3>
+			<code>library.add("books")</code>
+			<h3>Adding multiple caches</h3>
+			<code>library.add(["borrowers", "fines"])</code>
+			<h3>Removing a cache</h3>
+			<code>library.remove("books")</code>
+			<h3>Removing multiple caches</h3>
+			<code>library.remove(["borrowers", "fines"])</code>
+		</div>
+	</div>
+	<div id="item">
+		<div class="inner">
+			<h2>Item</h2>
+			<h3>Adding an item</h3>
+			<code>
+<pre>
+library.books.add({
+  title: "Of Mice and Men",
+  author: "John Steinbeck",
+  year: 1937
+})
+</pre>
+			</code>
+			<h3>Adding multiple items</h3>
+			<code>
+<pre>
+library.books.add([{
+  title: "Of Mice and Men",
+  author: "John Steinbeck",
+  year: 1937
+},{
+  title: "Vineland",
+  author: "Thomas Pynchon",
+  year: 1990
+},{
+  title: "Chimera",
+  author: "John Barth",
+  year: 1972
+}])
+</pre>
+			</code>
+			<h3>Selecting items</h3>
+			<p>Every cache has two methods for selecting items.</p>
+			<h4>all(options)</h4>
+			<p>By default, all() will return every item in the cache.</p>
+			<code>library.books.all()</code>
+			<p>However, the result set can be augmented with the options: limit, offset, and sort_by.</p>		
+			<code>
+<pre>
+library.books.all({
+  limit: 2,
+  offset: 1,
+  sort_by: "year"
+})
+</pre>
+			</code>
+			<h4>where(query, options)</h4>
+			<p>where() expects a query object, but also accepts the above-noted augmentation options.</p>
+			<h5>query</h5>
+			<p>A query is an object whose keys match those in the cached items. Any items not containing <em>all</em> query keys will be excluded from the result set. There are three ways to match cached values: <strong>exact</strong>, <strong>regex</strong>, and <strong>range</strong>.</p>
+			<h6>exact</h6>
+			<code>
+<pre>
+library.books.where({
+  author: "Thomas Pynchon"
+})
+</pre>
+			</code>
+			<h6>regex</h6>
+			<code>
+<pre>
+library.books.where({
+  author: /^John/
+})
+</pre>
+			</code>
+			<h6>range</h6>
+			<p>A range is only used for numeric values and can be specified with a minimum and/or maximum value.</p>
+			<code>
+<pre>
+library.books.where({
+  year: { min: 1940, max: 1995 }
+})
+</pre>
+			</code>
+			<h5>options</h5>	
+			<p>Like all(), where() allows you to augment the result set with limit, offset, and sort_by.</p>		
+			<code>
+<pre>
+library.books.where({
+  author: /^John/
+},{
+  limit: 1,
+	offset: 2,
+  sort_by: "title"
+})
+</pre>
+			</code>
+			<h3>Updating items</h3>
+			<p>By combining the query object from where(), and the data object from add(), it's possible to update the values of multiple items at once.</p>
+			<code>
+<pre>
+library.books.update({
+  title: "Chimera"
+},{
+  author: "(Not) John Barth"
+})
+</pre>
+			</code>
+			<h3>Removing items</h3>
+			<code>
+<pre>
+library.books.remove({
+  year: { max: 1984 }
+})
+</pre>
+			</code>
+		</div>
+	</div>
+	</div>
+	<script src="https://raw.github.com/michaelrhodes/quec/master/quec.js"></script>
+</body>
+</html>
