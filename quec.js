@@ -6,7 +6,6 @@
 		match: function(one, two) { return (/RegExp/.test(one.constructor)) ? one.test(two) : one === two },
 		set: function(cache) { helper.local[cache.__path__] = JSON.stringify(cache) },
 		split: function(string, delimiter) { return helper.trim(string).split(delimiter) },
-		time: function() { return +new Date() },
 		trim: function(string) { return string.replace(/\s/g, "") },
 		unset: function(cache) { helper.local.removeItem(cache.__path__) },
 		is: function(object, type) { return (new RegExp(type, "i")).test(object.constructor.toString()) },
